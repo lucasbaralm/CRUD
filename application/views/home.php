@@ -26,7 +26,7 @@
 					<h2>Gerenciamento de <b>Empregados</b></h2>
 				</div>
 				<div class="col-sm-6">
-					<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Cadastrar novo membro</span></a>
+					<a href="<?= base_url("index.php/user/create")?> " class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Cadastrar novo membro</span></a>
 					<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Deletar</span></a>						
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 					<td><?= $funcionario['telefone'] ?></td>
 					<td>
 						<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-						<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						<a href="<?= base_url("index.php/user/delete/{$funcionario["email"]}") ?>" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 					</td>
 				</tr>
 				<?php endforeach ?>
