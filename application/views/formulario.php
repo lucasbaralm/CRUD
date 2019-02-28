@@ -79,7 +79,7 @@
     ?>
     <br>
     <button type="submit" class="btn btn-success"><i class="icon-fa fa fa-check"></i>Salvar</button>
-    <a href="<?= base_url("/user/home") ?>" class="btn btn-danger"><i class="icon-fa fa fa-times"></i>Cancelar</a> 
+    <a href="<?= base_url("index.php/user/home") ?>" class="btn btn-danger"><i class="icon-fa fa fa-times"></i>Cancelar</a> 
     <?php
     echo form_close();
     ?>
