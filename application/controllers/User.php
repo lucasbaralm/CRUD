@@ -48,5 +48,17 @@ class User extends CI_Controller {
             $this->load->view("formulario");
         }
     }
+
+    public function editar(){
+        $email = $this->input->get("email");
+        $this->load->model("funcionarios_model");
+        $funcionario = $this->funcionarios_model->busca($email);
+    }
     
+    public function salvar($email){
+        $this->load->model("funcionarios_model");
+        $this->funcionarios_model->salvar($email);
+        //$this->session->set_flashdata('success', 'Funcionário alterado com sucesso.');
+        redirect("user/home");
+    }
 }

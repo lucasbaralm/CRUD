@@ -63,6 +63,40 @@
 					<td><?= $funcionario['telefone'] ?></td>
 					<td>
 						<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<div id="editEmployeeModal" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<form action="salvar/<?= $funcionario['email'] ?>" method="post">
+									<div class="modal-header">						
+										<h4 class="modal-title">Editar Funcionário</h4>
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									</div>
+									<div class="modal-body">					
+										<div class="form-group">
+											<label>Nome</label>
+											<input type="text" name="nome" class="form-control" required value="<?= $funcionario['nome'] ?>"> 
+										</div>
+										<div class="form-group">
+											<label>Email</label>
+											<input type="email" name="email" class="form-control" required value="<?= $funcionario['email'] ?>">
+										</div>
+										<div class="form-group">
+											<label>Endereço</label>
+											<input type="text" name="endereco" class="form-control" required value="<?= $funcionario['endereco'] ?>">
+										</div>
+										<div class="form-group">
+											<label>Telefone</label>
+											<input type="text" name="telefone" class="form-control" required value="<?= $funcionario['telefone'] ?>">
+										</div>					
+									</div>
+									<div class="modal-footer">
+										<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+										<input type="submit" class="btn btn-info">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 						<a href="<?= base_url("index.php/user/delete/{$funcionario["email"]}") ?>" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 					</td>
 				</tr>
@@ -114,41 +148,6 @@
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
 						<input type="submit" class="btn btn-success" value="Salvar">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<div id="editEmployeeModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form>
-					<div class="modal-header">						
-						<h4 class="modal-title">Editar Funcionário</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">					
-						<div class="form-group">
-							<label>Nome</label>
-							<input type="text" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>Email</label>
-							<input type="email" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>Endereço</label>
-							<textarea class="form-control" required></textarea>
-						</div>
-						<div class="form-group">
-							<label>Telefone</label>
-							<input type="text" class="form-control" required>
-						</div>					
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-info" value="Save">
 					</div>
 				</form>
 			</div>

@@ -17,6 +17,20 @@ class Funcionarios_model extends CI_Model {
 	
 	public function adicionar($funcionario) {
 		return $this->db->insert("funcionarios", $funcionario) ;
- }
+ 	}
+
+ 	public function salvar(){
+ 		$email = $this->input->post('email');
+
+ 		$funcionario = array(
+ 			'nome' => $this->input->post('nome'),
+ 			'email' => $this->input->post('email'),
+ 			'endereco' => $this->input->post("endereco"),
+			'telefone' => $this->input->post("telefone"),
+ 		);
+
+ 		$this->db->where('email', $email);
+ 		return $this->db->update('funcionarios', $funcionario);
+ 	}
 
 }
