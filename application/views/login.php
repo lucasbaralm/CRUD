@@ -29,14 +29,17 @@
                 </div>
             </div>
 
+  <?php 
+   if ($this->session->flashdata("danger")) : ?>
+      <p class="alert alert-danger"><?= $this->session->flashdata("danger") ?></p>
+  <?php endif ?>
             <center>
-        <?php
-
-        echo form_open("user/index");
-            echo form_label("Email:", "username",array("style"=>"font-size: 170%"));
+  <?php
+        echo form_open("user/login");
+            echo form_label("Email:", "email",array("style"=>"font-size: 170%"));
             echo form_input(array(
-                "name" => "username",
-                "id" => "login",
+                "name" => "email",
+                "id" => "email",
                 "class" => "form-control",
                 "style" => "width:35%",
                 "maxlength" => "300"
@@ -53,15 +56,12 @@
                                 ));
             echo("<br>"); 
 
-            echo anchor('user/home', 'Login', array('class' => 'btn btn-primary btn-lg'));
-                                ?>
-<!--O botão abaixo vai ser modificado para ficar dentro do forms mas por enquanto para ser só um protótipo 
-só vai redirecionar para o 'home' pós-login -->                 
+            echo form_submit('submit', 'Submit');
+            echo form_close();
+                                ?>                
         </center>
     </div>
-</div>
-                            
-                            
-     </body>
+</div>                     
+</body>
 
 </html>                                

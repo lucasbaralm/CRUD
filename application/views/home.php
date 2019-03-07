@@ -26,8 +26,10 @@
 					<h2>Gerenciamento de <b>Empregados</b></h2>
 				</div>
 				<div class="col-sm-6">
+					<a href="<?= base_url("index.php/user/logout")?> " class="btn btn-warning"><i class="material-icons">&#xE152;</i> <span>Log Out</span></a>
 					<a href="<?= base_url("index.php/user/create")?> " class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Cadastrar novo membro</span></a>
 					<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Deletar</span></a>						
+					
 				</div>
 			</div>
 		</div>
